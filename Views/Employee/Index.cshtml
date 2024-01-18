@@ -1,0 +1,92 @@
+@model List<Employee>
+
+<div class="container">
+  <div class="row pt-4 pb-3">
+  <div class="col-6">
+   <h2 class="text-primary">
+    Employee List
+    </h2>
+   </div>
+   <div class="col-6 text-end">
+     <a asp-controller="Employee" asp-action="Add" class="btn btn-primary">
+     <i class="bi bi-plus-circle"></i> Create New Employee
+     </a>
+   </div>
+ </div>
+<div class="table-respnsive">
+<table class="table table-bordered table-striped" style="width:30%;">
+    <thead>
+        <tr>
+            <th>
+                Employee Id
+            </th>
+            <th>
+                Employee FirstName
+            </th>
+            <th>
+                Employee LastName
+            </th>
+            <th>
+                Employee  Email
+            </th>
+            <th>
+                Employee DOJ
+            </th>
+            <th>
+                Employee Designation
+            </th>
+            <th>
+                Operations
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model.OrderBy(order=>order.Id))
+        {
+            <tr>
+                <td>
+                    @employee.Id
+                </td>
+                <td>
+                    @employee.FirstName
+                </td>
+                <td>
+                    @employee.LastName
+                </td>
+                <td>
+                    @employee.Email
+                </td>
+                <td>
+                    @employee.DOJ
+                </td>
+                <td>
+                    @employee.Designation
+                </td>
+                <td>
+                     <div class="w-60 btn-group" role="group">
+                      <a asp-controller="EmployeeSkill" asp-action="AssignSkill"  class="btn btn-delete mx-2">
+                      Assign Skill
+                     </a>
+                 
+                    </div> 
+                    <div class="w-60 btn-group" role="group">
+                      <a asp-controller="Employee" asp-action="Edit"  class="btn btn-primary mx-2">
+                      <i class="bi bi-pencil-square"></i>Edit
+                     </a>
+                     </div>
+                    <div class="w-60 btn-group" role="group">
+                      <a asp-controller="Employee" asp-action="Delete"  class="btn btn-delete mx-2">
+                      <i class="bi bi-trash-fill"></i>Delete
+                     </a>
+                 
+                    </div> 
+                </td>
+         </tr>
+ }
+    </tbody>
+    </div>
+</table>
+</div>
+
+
+ 

@@ -1,0 +1,46 @@
+@model Employee
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <h2 class="text-primery">Edit Employee</h2>
+        <hr />
+
+    </div>
+    @* <div class="mb-3">
+    <label>Employee Id</label>
+    <input type="text" class="form-control"/>
+    </div> *@
+
+    <div class="mb-3">
+        <label>Employee FirstName</label>
+        <input asp-for="FirstName"  type="text" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Employee LastName</label>
+        <input asp-for="LastName" type="text" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Employee Email</label>
+        <input  asp-for="Email" type="text" class="form-control" />
+    </div>
+
+
+    <div class="mb-3">
+        <label>Employee DOJ</label>
+        <input asp-for="DOJ" type="Date" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Employee Designation</label>
+        <input asp-for="Designation" type="text" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width:150px">Update</button>
+    <a asp-controller="Employee" asp-action="Index" class="btn btn-secondary" style="width:150px">
+        Back To List
+    </a>
+
+</form>

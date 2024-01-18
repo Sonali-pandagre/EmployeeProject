@@ -1,0 +1,26 @@
+@model Skill
+
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <h2 class="text-primery">Add skill</h2>
+        <hr />
+
+    </div>
+    @* <div class="mb-3">
+    <label>Employee Id</label>
+    <input type="text" class="form-control"/>
+    </div> *@
+
+    <div class="mb-3">
+        <label>Skill name</label>
+        <input asp-for="SkillName"  type="text" class="form-control" />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" style="">Create</button>
+    <a asp-controller="Skill" asp-action="Index" class="btn btn-secondary" style="">
+        Back To List
+    </a>
+
+</form>
